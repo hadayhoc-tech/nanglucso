@@ -1,0 +1,5 @@
+{
+  "name": "TICH HOP NLS",
+  "description": "Ứng dụng tự động hóa tích hợp năng lực số vào giáo án theo CV 5512 sử dụng Gemini AI.",
+  "requestFramePermissions": []
+}
