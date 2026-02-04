@@ -1,22 +1,23 @@
 // Danh sách models theo thứ tự fallback (AI_INSTRUCTIONS.md)
-// Sử dụng tên model chính xác từ Gemini API
+// Model mặc định: gemini-3-flash-preview
+// Fallback: gemini-3-pro-preview -> gemini-2.5-flash
 export const AI_MODELS = [
   {
-    id: 'gemini-1.5-flash',
-    name: 'Gemini 1.5 Flash',
-    description: 'Nhanh nhất, phù hợp cho hầu hết tác vụ',
+    id: 'gemini-2.5-flash',
+    name: 'Gemini 2.5 Flash',
+    description: 'Mặc định - Nhanh và ổn định',
     isDefault: true,
   },
   {
-    id: 'gemini-1.5-pro',
-    name: 'Gemini 1.5 Pro',
-    description: 'Chất lượng cao hơn, xử lý tốt văn bản dài',
+    id: 'gemini-2.5-pro',
+    name: 'Gemini 2.5 Pro',
+    description: 'Chất lượng cao, xử lý văn bản dài tốt',
     isDefault: false,
   },
   {
-    id: 'gemini-2.0-flash-exp',
-    name: 'Gemini 2.0 Flash (Experimental)',
-    description: 'Phiên bản mới nhất, đang thử nghiệm',
+    id: 'gemini-2.0-flash',
+    name: 'Gemini 2.0 Flash',
+    description: 'Phiên bản ổn định, fallback option',
     isDefault: false,
   },
 ] as const;
