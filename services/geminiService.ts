@@ -54,7 +54,11 @@ async function tryGenerateWithModel(
 // Get list of models to try (starting with selected, then fallbacks)
 function getModelsToTry(selectedModelId?: string): string[] {
   const modelIds: string[] = AI_MODELS.map(m => m.id as string);
-  const startId = selectedModelId || DEFAULT_MODEL_ID;
+
+  // Validate selectedModelId exists in current model list
+  // If not (e.g., old cached model), use default
+  const isValidModel = selectedModelId && modelIds.includes(selectedModelId);
+  const startId = isValidModel ? selectedModelId : DEFAULT_MODEL_ID;
 
   // Put selected model first, then others
   const startIndex = modelIds.indexOf(startId);
